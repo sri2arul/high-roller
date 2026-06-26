@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dwegto48bq7x0"]
+
+[ext_resource type="Script" uid="uid://cmqtlwuqr34v" path="res://menu.gd" id="1_l48gv"]
+[ext_resource type="PackedScene" uid="uid://bssxoot2r81qr" path="res://Untitled.glb" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://coishj322vr76" path="res://camera_3d_menu.gd" id="1_mae5d"]
+[ext_resource type="Script" uid="uid://brpp8vn7j8082" path="res://play_btn.gd" id="2_ouk20"]
+[ext_resource type="Texture2D" uid="uid://bm063duh3bnno" path="res://Untitled design (25).png" id="3_ytr4m"]
+[ext_resource type="Texture2D" uid="uid://dasfou3mw2alh" path="res://Untitled design (24).png" id="4_4hy44"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lti8b"]
+size = Vector3(7, 7, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lti8b"]
+albedo_color = Color(0, 1, 1, 1)
+
+[node name="Menu" type="Node3D" unique_id=511415225]
+script = ExtResource("1_l48gv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1975754026]
+transform = Transform3D(-0.1592554, -0.987084, 0.017397499, -0.04009372, 0.02407455, 0.9989058, -0.9864229, 0.15838361, -0.043409847, -4.3910904, 11.839026, 4.9898767)
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="DirectionalLight3D" unique_id=1366380951]
+transform = Transform3D(0.01087793, 0.76177317, 0.6477523, 0.9964344, 0.04594316, -0.07076387, -0.08366581, 0.6462124, -0.7585573, 8.617997, 1.3581161, 2.4388223)
+
+[node name="Camera3DMenu" type="Camera3D" parent="." unique_id=27099897 node_paths=PackedStringArray("target")]
+transform = Transform3D(-0.97579473, -0.090563536, 0.19905488, 7.450581e-09, 0.91022164, 0.4141214, -0.21868837, 0.4040975, -0.8881895, -1.9223197, 13.334994, 1.1577725)
+script = ExtResource("1_mae5d")
+target = NodePath("../Cube")
+
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=850693832]
+transform = Transform3D(0.1, 0, 0, 0, 0.08070531, 0.05904789, 0, -0.05904789, 0.08070531, -4.57472, 10.447169, 6.0082803)
+mesh = SubResource("BoxMesh_lti8b")
+surface_material_override/0 = SubResource("StandardMaterial3D_lti8b")
+
+[node name="Untitled" parent="." unique_id=1211462059 instance=ExtResource("1_lti8b")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="Cube_011" parent="Untitled" index="2" unique_id=912708651]
+transform = Transform3D(-45.71798, 0, 0, 0, 4.7119713, 0, 0, 0, -8.238239, -49.097435, 88.48552, 80.39704)
+
+[node name="Cube_002" parent="Untitled" index="7" unique_id=312166808]
+transform = Transform3D(-10.633231, 0, 0, 0, -7.9850087, 0, 0, 0, -16.105228, -4.3825846, 9.93938, 94.0403)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=846982353]
+
+[node name="PlayBtn" type="Button" parent="CanvasLayer" unique_id=2052168033]
+offset_left = 30.0
+offset_top = 460.0
+offset_right = 271.0
+offset_bottom = 609.0
+icon = ExtResource("3_ytr4m")
+expand_icon = true
+script = ExtResource("2_ouk20")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=549973298]
+offset_left = 630.0
+offset_top = 7.0
+offset_right = 1226.2222
+offset_bottom = 322.0
+texture = ExtResource("4_4hy44")
+expand_mode = 1
+
+[editable path="Untitled"]

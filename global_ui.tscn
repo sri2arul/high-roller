@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://g1hgikvupdg4"]
+
+[ext_resource type="Script" uid="uid://bi8yrpytx7icb" path="res://global_ui.gd" id="1_b2grt"]
+[ext_resource type="Texture2D" uid="uid://cxj7o3worxgbt" path="res://screen coin pngs/stardance constellaton (2).png" id="2_22env"]
+
+[node name="GlobalUI" type="CanvasLayer" unique_id=435442125]
+script = ExtResource("1_b2grt")
+
+[node name="CoinLbl" type="Label" parent="." unique_id=1887896532]
+offset_left = 170.0
+offset_top = 509.0
+offset_right = 314.0
+offset_bottom = 576.0
+theme_override_font_sizes/font_size = 48
+text = "10000"
+
+[node name="TextureRect" type="TextureRect" parent="CoinLbl" unique_id=319832533]
+layout_mode = 0
+offset_left = -67.0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 71.0
+texture = ExtResource("2_22env")
+expand_mode = 1

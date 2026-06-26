@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bugxwnfu58hhu"]
+
+[ext_resource type="AudioStream" uid="uid://b2i40ufu8n5k3" path="res://reycophoto-metronome-1-164214.mp3" id="1_k4xj7"]
+[ext_resource type="Script" uid="uid://dfgongxeo0try" path="res://music_player.gd" id="2_k4xj7"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" unique_id=1989587026]
+stream = ExtResource("1_k4xj7")
+pitch_scale = 0.91
+autoplay = true
+script = ExtResource("2_k4xj7")
