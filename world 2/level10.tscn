@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://bpkhwc5qse8x8"]
+
+[ext_resource type="Script" uid="uid://521jy4sgwhgn" path="res://level_1.gd" id="1_fm78o"]
+[ext_resource type="Script" uid="uid://7ki8qx14fdiq" path="res://kill_box.gd" id="2_3sgmh"]
+[ext_resource type="PackedScene" uid="uid://b00dfi06tnwbh" path="res://world 2/son.glb" id="3_k4q30"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xy4tn"]
+size = Vector3(13.07795, 0.50074005, 2.7774677)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xy4tn"]
+size = Vector3(13, 0.25, 2.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lwvnx"]
+albedo_color = Color(1.0530676, 1.0530676, 1.0530676, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_usj0q"]
+size = Vector3(7.0641336, 0.5115967, 10.002466)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5j5gb"]
+size = Vector3(7, 0.5, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xy4tn"]
+albedo_color = Color(0.21176471, 0.18431373, 0.21176471, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wy08v"]
+size = Vector3(2.9868164, 0.28271484, 2.8666992)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dopym"]
+size = Vector3(37.73639, 1, 34.059464)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm78o"]
+albedo_color = Color(0.46987844, 0.93778664, 0.99999994, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3sgmh"]
+albedo_color = Color(0.76178974, 0.9999998, 0.9877221, 1)
+
+[node name="Level10" type="Node3D" unique_id=1049463620 node_paths=PackedStringArray("ground", "lander", "target")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.694372, 1.9073486e-06, -26.319307)
+script = ExtResource("1_fm78o")
+ground = NodePath("")
+lander = NodePath("")
+target = NodePath("")
+
+[node name="Ground5" type="StaticBody3D" parent="." unique_id=659784682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.09617, 52.32698, 36.38227)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground5" unique_id=328703341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.452404, 2.357647, -6.962082)
+shape = SubResource("BoxShape3D_xy4tn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground5" unique_id=2023183800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.406012, 2.4602394, -6.951515)
+mesh = SubResource("BoxMesh_xy4tn")
+surface_material_override/0 = SubResource("StandardMaterial3D_lwvnx")
+
+[node name="Lander5" type="StaticBody3D" parent="." unique_id=32925987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.243835, 5.934536, 29.029867)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lander5" unique_id=581856336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2038956, 0.18196869, 0.00012588501)
+shape = SubResource("BoxShape3D_usj0q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lander5" unique_id=1240478868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2449799, 0.23127604, 0)
+mesh = SubResource("BoxMesh_5j5gb")
+surface_material_override/0 = SubResource("StandardMaterial3D_xy4tn")
+
+[node name="Target10" type="Area3D" parent="." unique_id=2071595900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.51809, 46.94091, 29.380325)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Target10" unique_id=841918082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.563374, 0.41358948, 0.20189667)
+shape = SubResource("BoxShape3D_wy08v")
+
+[node name="KillBox5" type="Area3D" parent="." unique_id=1860936399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.06134, 8.665924, 50.7813)
+script = ExtResource("2_3sgmh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillBox5" unique_id=457343589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.061556, -3.4273815, -21.673103)
+shape = SubResource("BoxShape3D_dopym")
+
+[node name="son" parent="." unique_id=360577054 instance=ExtResource("3_k4q30")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -5.8383026, 0.29767323, 1.9073483e-06)
+
+[node name="Cube_004" parent="son" index="5" unique_id=650416508]
+surface_material_override/0 = SubResource("StandardMaterial3D_fm78o")
+
+[node name="Cube_006" parent="son" index="8" unique_id=1338714352]
+surface_material_override/0 = SubResource("StandardMaterial3D_3sgmh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=476568450]
+transform = Transform3D(0.14198118, -0.8450439, 0.51550233, 0.9302528, 0.29190943, 0.22230299, -0.33833563, 0.4479847, 0.82755005, -12.286399, -3.6506834, 25.350096)
+light_color = Color(0.27387273, 0.27387273, 0.27387273, 1)
+light_energy = 2.883
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="DirectionalLight3D" unique_id=1971369741]
+transform = Transform3D(0.6137214, 0.5869716, -0.5280266, 0.7620024, -0.615406, 0.20156604, -0.20663662, -0.5260632, -0.824961, -1.5369859, 0.51659775, 2.6159778)
+light_color = Color(0.7664171, 0.7541753, 0.76352876, 1)
+light_energy = 0.83
+
+[node name="Camera3D" type="Camera3D" parent="DirectionalLight3D" unique_id=234891202]
+transform = Transform3D(0.05488485, 0.8940668, 0.44455868, 0.7624142, -0.32502386, 0.55953914, 0.6447575, 0.3082275, -0.69948816, 80.987335, 86.569664, -116.28375)
+fov = 35.95205
+
+[connection signal="body_entered" from="KillBox5" to="KillBox5" method="_on_body_entered"]
+
+[editable path="son"]

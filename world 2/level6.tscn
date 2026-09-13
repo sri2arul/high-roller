@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://dj41c7hnx7mbg"]
+
+[ext_resource type="Script" uid="uid://521jy4sgwhgn" path="res://level_1.gd" id="1_45q7n"]
+[ext_resource type="Script" uid="uid://7ki8qx14fdiq" path="res://kill_box.gd" id="2_gvcbt"]
+[ext_resource type="PackedScene" uid="uid://b00dfi06tnwbh" path="res://world 2/son.glb" id="2_trvw6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xy4tn"]
+size = Vector3(4.842607, 0.5134907, 5.125184)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xy4tn"]
+size = Vector3(5, 0.5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lwvnx"]
+albedo_color = Color(0.9355341, 0.935336, 0.93150854, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_usj0q"]
+size = Vector3(9.701097, 0.5115967, 16.432178)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5j5gb"]
+size = Vector3(7, 0.5, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xy4tn"]
+albedo_color = Color(0.21176471, 0.18431373, 0.21176471, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wy08v"]
+size = Vector3(5.774414, 0.28271484, 2.8666992)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dopym"]
+size = Vector3(18.58023, 2.4257813, 16.766191)
+
+[node name="Level6" type="Node3D" unique_id=1049463620 node_paths=PackedStringArray("ground", "lander", "target")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -6.694372, 1.9073486e-06, -26.319307)
+script = ExtResource("1_45q7n")
+ground = NodePath("Ground")
+lander = NodePath("Lander")
+target = NodePath("Target6")
+
+[node name="son" parent="." unique_id=360577054 instance=ExtResource("2_trvw6")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -5.8383026, 0.29767323, 1.9073483e-06)
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=2046085209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.516483, 5.130459, -48.86548)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1214692975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2290344, -0.64134884, 1.9063587)
+shape = SubResource("BoxShape3D_xy4tn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=2091452464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.257513, -0.6130295, 1.8543549)
+mesh = SubResource("BoxMesh_xy4tn")
+surface_material_override/0 = SubResource("StandardMaterial3D_lwvnx")
+
+[node name="Lander" type="StaticBody3D" parent="." unique_id=2059113200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.468014, 2.4372144, -53.244823)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lander" unique_id=1595419318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5460262, 0.52103615, 0.09974098)
+shape = SubResource("BoxShape3D_usj0q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lander" unique_id=433883597]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0196419, 0.07729149, 0)
+mesh = SubResource("BoxMesh_5j5gb")
+surface_material_override/0 = SubResource("StandardMaterial3D_xy4tn")
+
+[node name="Target6" type="Area3D" parent="." unique_id=341537569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.157143, 2.4507604, -52.141216)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Target6" unique_id=302207663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.469319, 0.4135909, 0.20188904)
+shape = SubResource("BoxShape3D_wy08v")
+
+[node name="KillBox" type="Area3D" parent="." unique_id=1468456597]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.63015, 2.535911, -39.001778)
+script = ExtResource("2_gvcbt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillBox" unique_id=845016630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.11973, -4.140272, -14.96335)
+shape = SubResource("BoxShape3D_dopym")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=46132982]
+transform = Transform3D(0.7227199, -0.58232003, -0.37226245, 0.42566222, 0.79937285, -0.42404568, 0.5445067, 0.14800823, 0.8255943, -12.286399, -3.6506834, 25.350096)
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="DirectionalLight3D" unique_id=631182201]
+transform = Transform3D(-0.55346924, 0.74266124, -0.37699738, 0.5754094, 0.013709433, -0.8177509, -0.6021429, -0.6695283, -0.43492165, 0.26051247, 2.7483892, 2.0107698)
+
+[connection signal="body_entered" from="KillBox" to="KillBox" method="_on_body_entered"]
