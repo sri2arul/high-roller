@@ -8,10 +8,15 @@
 [ext_resource type="Script" uid="uid://ddl5lt4fccrfk" path="res://level_4_btn.gd" id="4_8qr5y"]
 [ext_resource type="Script" uid="uid://cpi3gb8a5mdet" path="res://level_5_btn.gd" id="5_05pd3"]
 [ext_resource type="Script" uid="uid://dny252qsemwto" path="res://settings_btn.gd" id="6_1iyaf"]
+[ext_resource type="Script" uid="uid://bcrucls21rja3" path="res://level_6_btn.gd" id="7_vebhf"]
 [ext_resource type="Script" uid="uid://cgxtqncq6f4xx" path="res://best_bar.gd" id="8_8qr5y"]
+[ext_resource type="Script" uid="uid://cj7aylxkmfgua" path="res://level_7_btn.gd" id="8_473rj"]
 [ext_resource type="Script" uid="uid://cec42q82a5rsv" path="res://best_lbl.gd" id="9_05pd3"]
+[ext_resource type="Script" uid="uid://cig546w3pd3sl" path="res://level_8_btn.gd" id="9_w6pwf"]
 [ext_resource type="Texture2D" uid="uid://mdlgoie2mnov" path="res://screen coin pngs/bronzecoin.png" id="10_7pkux"]
+[ext_resource type="Script" uid="uid://mxqb2xupjqv3" path="res://level_9_btn.gd" id="10_k1jds"]
 [ext_resource type="Texture2D" uid="uid://djdaqisgjafe2" path="res://screen coin pngs/silvercoin.png" id="11_851in"]
+[ext_resource type="Script" uid="uid://dcoy7mpclyfoy" path="res://level_10_btn.gd" id="11_cmh1e"]
 [ext_resource type="Texture2D" uid="uid://cotmtixs0jy2k" path="res://screen coin pngs/goldcoin.png" id="12_ehng5"]
 [ext_resource type="Texture2D" uid="uid://ckjhekqqud5wu" path="res://screen coin pngs/diamondcoin.png" id="13_p532j"]
 
@@ -73,6 +78,61 @@ offset_right = 643.744
 offset_bottom = 61.896
 text = "5"
 script = ExtResource("5_05pd3")
+
+[node name="Level6Btn" type="Button" parent="CanvasLayer" unique_id=162493357]
+anchors_preset = -1
+anchor_right = 0.028
+anchor_bottom = 0.048
+offset_left = 568.0
+offset_top = 561.0
+offset_right = 567.744
+offset_bottom = 560.896
+text = "6"
+script = ExtResource("7_vebhf")
+
+[node name="Level7Btn" type="Button" parent="CanvasLayer" unique_id=305174235]
+anchors_preset = -1
+anchor_right = 0.028
+anchor_bottom = 0.048
+offset_left = 715.0
+offset_top = 529.0
+offset_right = 714.744
+offset_bottom = 528.896
+text = "7"
+script = ExtResource("8_473rj")
+
+[node name="Level8Btn" type="Button" parent="CanvasLayer" unique_id=324350949]
+anchors_preset = -1
+anchor_right = 0.028
+anchor_bottom = 0.048
+offset_left = 700.0
+offset_top = 571.0
+offset_right = 699.744
+offset_bottom = 570.896
+text = "8"
+script = ExtResource("9_w6pwf")
+
+[node name="Level9Btn" type="Button" parent="CanvasLayer" unique_id=13614845]
+anchors_preset = -1
+anchor_right = 0.028
+anchor_bottom = 0.048
+offset_left = 676.0
+offset_top = 526.0
+offset_right = 675.744
+offset_bottom = 525.896
+text = "9"
+script = ExtResource("10_k1jds")
+
+[node name="Level10Btn" type="Button" parent="CanvasLayer" unique_id=1156989177]
+anchors_preset = -1
+anchor_right = 0.028
+anchor_bottom = 0.048
+offset_left = 628.0
+offset_top = 577.0
+offset_right = 627.744
+offset_bottom = 576.896
+text = "10"
+script = ExtResource("11_cmh1e")
 
 [node name="LeftBtn" type="Button" parent="CanvasLayer" unique_id=1886238155]
 offset_left = 44.0
@@ -195,8 +255,8 @@ offset_bottom = 94.0
 transparent_bg = true
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=1232997840]
-transform = Transform3D(0.8657415, 0.20946619, -0.4545503, -0.012875272, 0.91722804, 0.39815503, 0.5003261, -0.33884683, 0.7967789, -42.28358, 42.204903, 68.47887)
-fov = 30.477392
+transform = Transform3D(0.8657415, 0.20946619, -0.4545503, -0.012875272, 0.91722804, 0.39815503, 0.5003261, -0.33884683, 0.7967789, -21.939724, 23.800024, 31.679716)
+fov = 60.738033
 
 [node name="lvl1ed" parent="." unique_id=1459311583 instance=ExtResource("1_il3u1")]
 transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, -0.00068736076, -0.35133195, 0.4181398)
