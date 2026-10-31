@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cjjh8qiin8vl5"]
+
+[ext_resource type="Script" uid="uid://5ihx8qyga4co" path="res://lore_label.gd" id="1_pp6gk"]
+[ext_resource type="Script" uid="uid://df1q3ufx8ebfq" path="res://back_from_lore_btn.gd" id="2_k5caf"]
+
+[node name="Lore" type="Control" unique_id=637803266]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=745162327]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -108.0
+offset_top = -21.0
+offset_right = 86.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.26530978, 0.19537634, 0.08069105, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1654163803]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 11.0
+offset_right = -14.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.19780001, 0.20853335, 0.23, 0.5137255)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=6742567]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 27.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ScrollContainer" unique_id=1492326605]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+autowrap_mode = 2
+script = ExtResource("1_pp6gk")
+
+[node name="BackFromLoreBtn" type="Button" parent="." unique_id=1506831724]
+layout_mode = 0
+offset_left = 834.0
+offset_top = 94.0
+offset_right = 1041.0
+offset_bottom = 198.0
+theme_override_font_sizes/font_size = 41
+text = "BACK"
+script = ExtResource("2_k5caf")

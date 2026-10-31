@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b00dfi06tnwbh" path="res://world 2/son.glb" id="3_qr7l0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xy4tn"]
-size = Vector3(5.7047453, 0.56812286, 14.030033)
+size = Vector3(5.4876294, 0.56812286, 13.762087)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xy4tn"]
 size = Vector3(5.7, 0.5, 14)
@@ -28,17 +28,17 @@ size = Vector3(5.774414, 0.28271484, 2.8666992)
 size = Vector3(37.73639, 1, 27.002293)
 
 [node name="Level9" type="Node3D" unique_id=1049463620 node_paths=PackedStringArray("ground", "lander", "target")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.694372, 1.9073486e-06, -26.319307)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.694372, 1.9073486e-06, -26.319307)
 script = ExtResource("1_fpgsn")
-ground = NodePath("")
-lander = NodePath("")
-target = NodePath("")
+ground = NodePath("Ground4")
+lander = NodePath("Lander4")
+target = NodePath("Target9")
 
 [node name="Ground4" type="StaticBody3D" parent="." unique_id=1717295096]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.22141, 51.904964, -82.92908)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.22141, 51.904964, -82.939835)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground4" unique_id=176081924]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.184517, -0.17531967, 0.69825745)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2930756, -0.17531967, 0.8322296)
 shape = SubResource("BoxShape3D_xy4tn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground4" unique_id=2101326543]

@@ -13,6 +13,12 @@ size = Vector3(7, 7, 7)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lti8b"]
 albedo_color = Color(0, 1, 1, 1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_l48gv"]
+size = Vector3(400, 1, 400)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ecwwl"]
+albedo_color = Color(0.13518628, 0.33853483, 0.38747388, 1)
+
 [node name="Menu" type="Node3D" unique_id=511415225]
 script = ExtResource("1_l48gv")
 
@@ -35,6 +41,11 @@ transform = Transform3D(0.1, 0, 0, 0, 0.08070531, 0.05904789, 0, -0.05904789, 0.
 mesh = SubResource("BoxMesh_lti8b")
 surface_material_override/0 = SubResource("StandardMaterial3D_lti8b")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Cube" unique_id=109471663]
+transform = Transform3D(1.5295707, -6.934409, -7.040908, -6.748427, -5.937788, 4.3819423, -7.2193594, 4.0812564, -5.5878615, -34.35333, 21.064896, 7.1058884)
+light_energy = 0.9
+shadow_enabled = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=846982353]
 
 [node name="PlayBtn" type="Button" parent="CanvasLayer" unique_id=2052168033]
@@ -53,3 +64,8 @@ offset_right = 1226.2222
 offset_bottom = 322.0
 texture = ExtResource("4_4hy44")
 expand_mode = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1439944817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5705719, 0)
+mesh = SubResource("BoxMesh_l48gv")
+surface_material_override/0 = SubResource("StandardMaterial3D_ecwwl")

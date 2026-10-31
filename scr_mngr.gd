@@ -19,7 +19,7 @@ var point_goals = [
 	{"bronze": 450, "silver": 650, "gold": 850, "diamond": 1000},
 ]
 
-func finish_lvl(lvl_index, points, flips, used_spin, cleared_checkpoint, delayed_spin, triple_flip):
+func finish_lvl(lvl_index, points, flips, used_spin, cleared_checkpoint, delayed_spin, triple_flip, one_dir):
 	GameData.total_points+= points
 	
 	var goals = point_goals[lvl_index]
@@ -46,6 +46,21 @@ func finish_lvl(lvl_index, points, flips, used_spin, cleared_checkpoint, delayed
 	
 	if lvl_index == 4 and flips>= 3:
 		award_special(lvl_index, "triple_flip", 10) 
+		
+	if lvl_index == 5 and cleared_checkpoint == true:
+		award_special(lvl_index, "worker_pass", 10)
+
+	if lvl_index == 6 and flips >= 1:
+		award_special(lvl_index, "flip", 10)
+
+	if lvl_index == 7 and one_dir == true:
+		award_special(lvl_index, "one_dir", 10)
+
+	if lvl_index == 8 and flips >= 2:
+		award_special(lvl_index, "double_flip", 10)
+	
+	if lvl_index == 9 and flips>= 4:
+		award_special(lvl_index, "quad_flip", 10) 
 		
 	# 
 	

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b00dfi06tnwbh" path="res://world 2/son.glb" id="3_k4q30"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xy4tn"]
-size = Vector3(13.07795, 0.50074005, 2.7774677)
+size = Vector3(13.07795, 0.50074005, 4.1190805)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xy4tn"]
 size = Vector3(13, 0.25, 2.8)
@@ -35,17 +35,17 @@ albedo_color = Color(0.46987844, 0.93778664, 0.99999994, 1)
 albedo_color = Color(0.76178974, 0.9999998, 0.9877221, 1)
 
 [node name="Level10" type="Node3D" unique_id=1049463620 node_paths=PackedStringArray("ground", "lander", "target")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.694372, 1.9073486e-06, -26.319307)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -6.694372, 1.9073486e-06, -26.319307)
 script = ExtResource("1_fm78o")
-ground = NodePath("")
-lander = NodePath("")
-target = NodePath("")
+ground = NodePath("Ground5")
+lander = NodePath("Lander5")
+target = NodePath("Target10")
 
 [node name="Ground5" type="StaticBody3D" parent="." unique_id=659784682]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.09617, 52.32698, 36.38227)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.09617, 52.32698, 34.38601)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground5" unique_id=328703341]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.452404, 2.357647, -6.962082)
+transform = Transform3D(0.99999887, 0, 0, 0, 1, 0, 0, 0, 0.99999887, 12.452404, 2.357647, -6.2912745)
 shape = SubResource("BoxShape3D_xy4tn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground5" unique_id=2023183800]

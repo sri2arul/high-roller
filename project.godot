@@ -27,6 +27,10 @@ GlobalUI="*uid://g1hgikvupdg4"
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[gui]
+
+theme/custom="uid://b4nb5v5csxd0a"
+
 [input]
 
 roll={

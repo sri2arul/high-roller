@@ -17,10 +17,10 @@ var spawn_offsets=[
 	Vector3(3.7, 1, 0),
 	Vector3(0.7, 1, 0),
 	Vector3(0, 0.5, 2),
-	Vector3(0.7, 1, 0),
-	Vector3(0.7, 1, 0),
-	Vector3(0.7, 1, 0),
-	Vector3(0.7, 1, 0)
+	Vector3(1.1, 1.2, 0),
+	Vector3(0.8, 1, 0),
+	Vector3(-1.3, 1, 4),
+	Vector3(-7.8, 3.1, 2.9)
 	]
 var loading := false
 func _ready():

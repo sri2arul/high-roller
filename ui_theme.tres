@@ -1,0 +1,37 @@
+[gd_resource type="Theme" format=3 uid="uid://b4nb5v5csxd0a"]
+
+[ext_resource type="FontFile" uid="uid://dwrhgcns5a65d" path="res://Redaction20-Regular.ttf" id="1_touxu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmjyp"]
+bg_color = Color(0.9405, 0.945725, 0.95, 0.5372549)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.76240367, 0.76240367, 0.7624038, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_touxu"]
+bg_color = Color(0.8366, 0.86508, 0.89, 0.69803923)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.48962224, 0.48962224, 0.489622, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[resource]
+default_font = ExtResource("1_touxu")
+Button/colors/font_color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0.021434585, 0.021434639, 0.021434741, 1)
+Button/colors/font_hover_pressed_color = Color(0.91228896, 0.9122889, 0.91228884, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_dmjyp")
+Button/styles/normal = SubResource("StyleBoxFlat_touxu")

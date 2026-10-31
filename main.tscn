@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://c23gm6xyiqttv" path="res://camera_3d.gd" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://bktj0dff3dyd6" path="res://win_screen.gd" id="4_kek77"]
 [ext_resource type="Script" uid="uid://dksy2ecv1ej6q" path="res://next_btn.gd" id="5_7mycd"]
-[ext_resource type="FontFile" uid="uid://cfhllliaollkc" path="res://helvmn.ttf" id="5_272bh"]
+[ext_resource type="FontFile" uid="uid://no1htau74w81" path="res://Redaction20-Bold.ttf" id="6_2cqfq"]
 [ext_resource type="Script" uid="uid://cf8w136q2cmw6" path="res://retry_btn.gd" id="6_272bh"]
 [ext_resource type="Script" uid="uid://du31yegy1kqcg" path="res://exit_btn.gd" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://mdlgoie2mnov" path="res://screen coin pngs/bronzecoin.png" id="10_ycdy4"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cotmtixs0jy2k" path="res://screen coin pngs/goldcoin.png" id="12_vivmo"]
 [ext_resource type="Texture2D" uid="uid://ckjhekqqud5wu" path="res://screen coin pngs/diamondcoin.png" id="13_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://dd53gre3ot7lf" path="res://screen coin pngs/speccoin.png" id="14_w48qg"]
+[ext_resource type="Script" uid="uid://kjnxim3xyeto" path="res://lore.gd" id="15_vivmo"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
 
@@ -21,6 +22,20 @@
 albedo_color = Color(0, 1, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h2yge"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vivmo"]
+sky_curve = 0.5
+ground_bottom_color = Color(0.4, 0.4627451, 0.56078434, 1)
+ground_curve = 0.75
+
+[sub_resource type="Sky" id="Sky_2cqfq"]
+sky_material = SubResource("ProceduralSkyMaterial_vivmo")
+
+[sub_resource type="Environment" id="Environment_vivmo"]
+background_mode = 1
+background_color = Color(0.26160425, 0.45401502, 0.5307279, 1)
+sky = SubResource("Sky_2cqfq")
+ambient_light_source = 3
 
 [node name="Main" type="Node3D" unique_id=2140290317]
 transform = Transform3D(-0.8871639, 0, 0.4614544, 0, 1, 0, -0.4614544, 0, -0.8871639, 0, 0, 0)
@@ -56,6 +71,8 @@ d = NodePath("../Dice")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=699742414]
 transform = Transform3D(0.19622858, -0.5507752, 0.811259, -0.20352398, 0.78644925, 0.58316016, -0.9592039, -0.27954334, 0.042227842, 0.20383711, 3.644868, 0.6489142)
+light_energy = 0.9
+shadow_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1081702044]
 
@@ -70,60 +87,62 @@ script = ExtResource("4_kek77")
 
 [node name="WinTitle" type="Label" parent="CanvasLayer/WinScreen" unique_id=266216445]
 layout_mode = 0
-offset_left = 488.0
-offset_top = 98.0
-offset_right = 672.0
-offset_bottom = 132.0
+offset_left = 434.0
+offset_top = 113.0
+offset_right = 707.0
+offset_bottom = 156.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("5_272bh")
+theme_override_fonts/font = ExtResource("6_2cqfq")
 theme_override_font_sizes/font_size = 35
-text = "U GOT THIS"
+text = "YOU GOT THIS!"
 
 [node name="WinSubtitle" type="Label" parent="CanvasLayer/WinScreen" unique_id=916162355]
 layout_mode = 0
-offset_left = 431.0
-offset_top = 177.0
-offset_right = 723.0
-offset_bottom = 200.0
-theme_override_fonts/font = ExtResource("5_272bh")
-text = "COMPLETE SILVER GOAL 4 NEXT LEVEL"
+offset_left = 525.0
+offset_top = 162.0
+offset_right = 628.0
+offset_bottom = 185.0
+theme_override_fonts/font = ExtResource("6_2cqfq")
+text = "NICE ONE..."
 
 [node name="RetryBtn" type="Button" parent="CanvasLayer/WinScreen" unique_id=1058935663]
 layout_mode = 0
-offset_left = 619.0
-offset_top = 457.0
-offset_right = 767.0
-offset_bottom = 488.0
-theme_override_fonts/font = ExtResource("5_272bh")
-text = "RETRY>"
+offset_left = 601.0
+offset_top = 470.0
+offset_right = 749.0
+offset_bottom = 501.0
+theme_override_fonts/font = ExtResource("6_2cqfq")
+text = "RETRY LEVEL"
 script = ExtResource("6_272bh")
 
 [node name="NextBtn" type="Button" parent="CanvasLayer/WinScreen" unique_id=584853772]
 layout_mode = 0
-offset_left = 846.0
-offset_top = 459.0
-offset_right = 999.0
-offset_bottom = 490.0
-theme_override_fonts/font = ExtResource("5_272bh")
-text = "NEXXXTT"
+offset_left = 810.0
+offset_top = 470.0
+offset_right = 963.0
+offset_bottom = 501.0
+theme_override_fonts/font = ExtResource("6_2cqfq")
+text = "NEXT LEVEL"
 script = ExtResource("5_7mycd")
 
 [node name="PrevBtn" type="Button" parent="CanvasLayer/WinScreen" unique_id=1782218664]
 layout_mode = 0
 offset_left = 165.0
 offset_top = 467.0
-offset_right = 309.0
+offset_right = 358.0
 offset_bottom = 503.0
-text = "PREVIOUS OFC"
+theme_override_fonts/font = ExtResource("6_2cqfq")
+text = "PREVIOUS LEVEL"
 script = ExtResource("1_5vw27")
 
 [node name="HomeBtn" type="Button" parent="CanvasLayer/WinScreen" unique_id=772539898]
 layout_mode = 0
-offset_left = 391.0
-offset_top = 459.0
-offset_right = 535.0
-offset_bottom = 495.0
-text = "HOMEEEEE"
+offset_left = 398.0
+offset_top = 467.0
+offset_right = 542.0
+offset_bottom = 503.0
+theme_override_fonts/font = ExtResource("6_2cqfq")
+text = "HOME"
 script = ExtResource("8_5vw27")
 
 [node name="BronzeLbl" type="Label" parent="CanvasLayer/WinScreen" unique_id=1708791004]
@@ -132,6 +151,7 @@ offset_left = 610.0
 offset_top = 259.0
 offset_right = 715.0
 offset_bottom = 282.0
+theme_override_fonts/font = ExtResource("6_2cqfq")
 text = "BRONZE - 150"
 
 [node name="SilverLbl" type="Label" parent="CanvasLayer/WinScreen" unique_id=1189501728]
@@ -140,6 +160,7 @@ offset_left = 612.0
 offset_top = 292.0
 offset_right = 705.0
 offset_bottom = 315.0
+theme_override_fonts/font = ExtResource("6_2cqfq")
 text = "SILVER - 250"
 
 [node name="GoldLbl" type="Label" parent="CanvasLayer/WinScreen" unique_id=373822902]
@@ -148,6 +169,7 @@ offset_left = 612.0
 offset_top = 326.0
 offset_right = 698.0
 offset_bottom = 349.0
+theme_override_fonts/font = ExtResource("6_2cqfq")
 text = "GOLD - 350"
 
 [node name="DiamondLbl" type="Label" parent="CanvasLayer/WinScreen" unique_id=1170293206]
@@ -156,6 +178,7 @@ offset_left = 613.0
 offset_top = 362.0
 offset_right = 733.0
 offset_bottom = 385.0
+theme_override_fonts/font = ExtResource("6_2cqfq")
 text = "DIAMOND - 400"
 
 [node name="SpecLbl" type="Label" parent="CanvasLayer/WinScreen" unique_id=1794509626]
@@ -164,40 +187,41 @@ offset_left = 513.0
 offset_top = 565.0
 offset_right = 698.0
 offset_bottom = 588.0
+theme_override_fonts/font = ExtResource("6_2cqfq")
 
 [node name="BronzeCoin" type="TextureRect" parent="CanvasLayer/WinScreen" unique_id=1167702860]
 layout_mode = 0
-offset_left = 716.0
-offset_top = 251.0
-offset_right = 756.0
-offset_bottom = 291.0
+offset_left = 726.0
+offset_top = 249.0
+offset_right = 766.0
+offset_bottom = 289.0
 texture = ExtResource("10_ycdy4")
 expand_mode = 1
 
 [node name="SilverCoin" type="TextureRect" parent="CanvasLayer/WinScreen" unique_id=1641814635]
 layout_mode = 0
-offset_left = 705.0
-offset_top = 285.0
-offset_right = 745.0
-offset_bottom = 325.0
+offset_left = 722.0
+offset_top = 283.0
+offset_right = 762.0
+offset_bottom = 323.0
 texture = ExtResource("11_w48qg")
 expand_mode = 1
 
 [node name="GoldCoin" type="TextureRect" parent="CanvasLayer/WinScreen" unique_id=58935547]
 layout_mode = 0
-offset_left = 707.0
-offset_top = 319.0
-offset_right = 747.0
-offset_bottom = 359.0
+offset_left = 714.0
+offset_top = 316.0
+offset_right = 754.0
+offset_bottom = 356.0
 texture = ExtResource("12_vivmo")
 expand_mode = 1
 
 [node name="DiamondCoin" type="TextureRect" parent="CanvasLayer/WinScreen" unique_id=890062066]
 layout_mode = 0
-offset_left = 733.0
-offset_top = 353.0
-offset_right = 773.0
-offset_bottom = 393.0
+offset_left = 750.0
+offset_top = 351.0
+offset_right = 790.0
+offset_bottom = 391.0
 texture = ExtResource("13_2cqfq")
 expand_mode = 1
 
@@ -216,6 +240,7 @@ offset_left = 342.0
 offset_top = 301.0
 offset_right = 574.0
 offset_bottom = 377.0
+theme_override_fonts/font = ExtResource("6_2cqfq")
 theme_override_font_sizes/font_size = 29
 
 [node name="PointsLabel" type="Label" parent="CanvasLayer" unique_id=272912217]
@@ -230,6 +255,16 @@ offset_left = 887.0
 offset_top = 29.0
 offset_right = 1126.0
 offset_bottom = 75.0
+
+[node name="Lore" type="Label" parent="." unique_id=334197034]
+offset_left = 59.0
+offset_top = 141.0
+offset_right = 422.0
+offset_bottom = 400.0
+script = ExtResource("15_vivmo")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=787639785]
+environment = SubResource("Environment_vivmo")
 
 [connection signal="body_entered" from="Dice" to="Dice" method="_on_body_entered"]
 [connection signal="body_exited" from="Dice" to="Dice" method="_on_body_exited"]

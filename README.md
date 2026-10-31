@@ -42,11 +42,11 @@ Sri Arul
 
 * 0.2
 
-    * Updated README, fixed buttons because they were too tiny to be legible, and made sure to give full Godot source code.
+	* Updated README, fixed buttons because they were too tiny to be legible, and made sure to give full Godot source code.
 
 * 0.1
 
-    * Initial Release
+	* Initial Release
 
 ## Acknowledgments
 

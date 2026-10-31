@@ -12,3 +12,10 @@ func get_lander():
 
 func _ready():
 	GlobalUI.visible= true
+	var wp = get_node_or_null("WorkerPass")
+	if wp:
+		wp.body_entered.connect(_on_worker_zone)
+	
+func _on_worker_zone(body):
+	if body.is_in_group("dice"):
+		body.cleared_checkpoint= true

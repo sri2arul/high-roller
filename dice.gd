@@ -16,6 +16,8 @@ var delayed_spin:= true
 var spin_timer:= 0.0
 var triple_flip:= false
 var cleared_checkpoint:= false
+var spun_left:= false
+var spun_right:= false
 
 #load allat other scenes with onready
 
@@ -49,8 +51,10 @@ func _physics_process(delta):
 		
 		if Input.is_action_pressed("ui_left"):
 			apply_torque_impulse(Vector3(0, 0, 0.01))
+			spun_left = true
 		if Input.is_action_pressed("ui_right"):
 			apply_torque_impulse(Vector3(0, 0, -0.01))
+			spun_right = true
 			
 		#spin usage for spec goals
 		
@@ -79,7 +83,7 @@ func _physics_process(delta):
 			#good landing if its flat (near 0) or upside down (near PI)
 			#need to fix this so its ALL FOUR SIDES
 			
-			if tilt < 0.45 or abs(tilt - PI) < 0.45:
+			if tilt < 0.25 or abs(tilt - PI) < 0.25 or abs(tilt - PI/2) < 0.25 or abs(tilt - 3*PI/2) < 0.25:
 				state = State.LANDED
 				var lm = get_node("/root/Main/LevelMan")
 				points = int(airtime * 100) + (flips * 100)
@@ -87,7 +91,8 @@ func _physics_process(delta):
 				GameData.best_scores[str(lm.lvl_index)]= max(points,GameData.best_scores.get(str(lm.lvl_index),0))
 				pts_label.text = str(points) + " pts"
 				#send allat goal traccing to scrmngr
-				ScrMngr.finish_lvl(lm.lvl_index, points, flips, used_spin, cleared_checkpoint, delayed_spin, triple_flip)
+				var one_dir = (spun_left and not spun_right) or (spun_right and not spun_left)
+				ScrMngr.finish_lvl(lm.lvl_index, points, flips, used_spin, cleared_checkpoint, delayed_spin, triple_flip, one_dir)
 				win_screen.visible= true
 				win_screen.show_goals(lm.lvl_index)
 			else:
@@ -119,6 +124,8 @@ func launch():
 	spin_timer= 0.0
 	triple_flip= false
 	finalrotation= rotation.z
+	spun_left= false
+	spun_right= false
 	var angle= rotation.z
 	var dir= Vector3(sin(angle), cos(angle), 0)
 	linear_velocity= dir * 7

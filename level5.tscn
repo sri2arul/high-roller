@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cy24tyuvx0i1a"]
+[gd_scene format=3 uid="uid://bkv3wpynvktqk"]
 
 [ext_resource type="PackedScene" uid="uid://bssxoot2r81qr" path="res://Untitled.glb" id="2_4wg22"]
 [ext_resource type="Script" uid="uid://7ki8qx14fdiq" path="res://kill_box.gd" id="3_t4tfv"]

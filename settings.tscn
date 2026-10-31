@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://boab4n1j172ux" path="res://settings.gd" id="1_nkug2"]
 [ext_resource type="Texture2D" uid="uid://ciylbmbj3o6gr" path="res://Untitled design (31).png" id="1_x2hje"]
+[ext_resource type="Script" uid="uid://cs3jw5oqjoio7" path="res://lore_btn.gd" id="2_3j6r5"]
 [ext_resource type="Texture2D" uid="uid://cbkvmvw8x5kgl" path="res://Untitled design (33).png" id="3_gc0em"]
 [ext_resource type="Texture2D" uid="uid://crc4km0y1k8mr" path="res://Untitled design (32).png" id="4_cj1lu"]
 [ext_resource type="Script" uid="uid://du31yegy1kqcg" path="res://exit_btn.gd" id="5_cj1lu"]
+[ext_resource type="FontFile" uid="uid://no1htau74w81" path="res://Redaction20-Bold.ttf" id="6_71mqq"]
 
 [node name="Settings" type="Control" unique_id=1459200771]
 layout_mode = 3
@@ -15,6 +17,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nkug2")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=564733029]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -46.0
+offset_right = 1028.0
+offset_bottom = 569.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.26530978, 0.19537634, 0.08069105, 1)
+
 [node name="Panel" type="Panel" parent="." unique_id=585564444]
 layout_mode = 0
 offset_left = 51.0
@@ -22,21 +37,30 @@ offset_top = 64.0
 offset_right = 1090.0
 offset_bottom = 578.0
 
+[node name="LoreBtn" type="Button" parent="Panel" unique_id=457679018]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 146.0
+offset_right = 440.5
+offset_bottom = 183.5
+text = "LORE"
+script = ExtResource("2_3j6r5")
+
 [node name="TitleRect" type="TextureRect" parent="Panel" unique_id=675138153]
 layout_mode = 0
-offset_left = -8.0
-offset_top = 54.0
-offset_right = 482.0
-offset_bottom = 250.0
+offset_left = 3.0
+offset_top = 81.0
+offset_right = 288.0
+offset_bottom = 208.0
 texture = ExtResource("1_x2hje")
 expand_mode = 1
 
 [node name="VolSlider" type="VSlider" parent="Panel" unique_id=557533241]
 layout_mode = 0
 offset_left = 819.0
-offset_top = 40.0
+offset_top = 77.0
 offset_right = 952.6667
-offset_bottom = 322.00003
+offset_bottom = 334.33337
 scale = Vector2(1.5, 1.5)
 max_value = 1.0
 step = 0.01
@@ -44,39 +68,40 @@ value = 1.0
 
 [node name="VolRect" type="TextureRect" parent="Panel/VolSlider" unique_id=1322687938]
 layout_mode = 0
-offset_left = -162.66667
-offset_top = 58.666668
-offset_right = 10.666641
-offset_bottom = 127.999985
+offset_left = -139.33334
+offset_top = 44.666664
+offset_right = 33.99997
+offset_bottom = 113.99997
 texture = ExtResource("3_gc0em")
 expand_mode = 1
 
 [node name="FSTogglr" type="CheckButton" parent="Panel" unique_id=617177543]
 layout_mode = 0
-offset_left = 373.0
-offset_top = 301.0
-offset_right = 590.0
-offset_bottom = 399.0
+offset_left = 305.0
+offset_top = 276.0
+offset_right = 457.5
+offset_bottom = 367.5
 scale = Vector2(2, 2)
 icon = ExtResource("4_cj1lu")
 expand_icon = true
 
 [node name="BackBtn" type="Button" parent="Panel" unique_id=1579910000]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 328.0
-offset_right = 222.0
-offset_bottom = 373.0
+offset_left = 63.0
+offset_top = 410.0
+offset_right = 207.0
+offset_bottom = 471.0
 theme_override_font_sizes/font_size = 27
 text = "BACK"
 script = ExtResource("5_cj1lu")
 
 [node name="Label" type="Label" parent="Panel" unique_id=104666480]
 layout_mode = 0
-offset_left = 134.0
-offset_top = 15.0
-offset_right = 900.0
-offset_bottom = 38.0
+offset_left = 87.0
+offset_top = 16.0
+offset_right = 927.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("6_71mqq")
 text = "HOW TO PLAY: PLAYING IS LIKE LANDING A BOTTLE FLIP: YOU WANT TO LAND AS FLAT AS YOU CAN."
 
 [connection signal="value_changed" from="Panel/VolSlider" to="." method="_on_vol_slider_value_changed"]
