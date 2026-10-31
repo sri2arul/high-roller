@@ -4,9 +4,9 @@ High Roller is a game about flipping dice.
 
 ## Description
 
-High Roller (I will get a better name as there are 40 other High Rollers) is a game inspired by Drive Mad and Backflip Adventure. You launch a six-sided dice off of a platform and try to land it as PERFECT as possible.
+High Roller is a game inspired by Drive Mad and Backflip Adventure. You launch a six-sided dice off of a platform and try to land it as PERFECT as possible.
 
-The game will take place (only one map so far) in different maps where each five levels are on each map. Each map is connected, as in the version i made, it takes place in a city and the levels move higher and higher as you progress through the map.
+The game will take place in different maps where each five levels are on each map. Each map is connected, as in the version i made, it takes place in a city and the levels move higher and higher as you progress through the map.
 
 ## Getting Started
 
@@ -32,13 +32,17 @@ The game will take place (only one map so far) in different maps where each five
 
 - The retry, previous, and next buttons appear after landing
 
-- If there's a bug, REPORT TO ME I'M TALKING TO YOU S𝐓ARDANCE 𝐑𝐄𝐕𝐈𝐄𝐖𝐄𝐑
+- If there's a bug, contact saifogtame@gmail.com
 
 ## Authors
 
 Sri Arul 
 
 ## Version History
+
+* 0.3
+
+	* Updated README, made sure to give full Godot source code, and a lot of fixes.
 
 * 0.2
 
@@ -50,6 +54,6 @@ Sri Arul
 
 ## Acknowledgments
 
-* just tutorials blah blah
+* Tutorials.
 
-* claude taught me some of the tutorials and gave me links to some of them ngl
+* Claude taught me some of the tutorials i gave it to explain and it gave me links to more to repeat the process whenever I was struggling.
